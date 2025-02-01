@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DREAMCOIN::SERVER_ACCESS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    <div class="terminal">
+        <div class="terminal-header">
+            <div class="server-info">
+                DREAMCOIN::MAINFRAME v1.0.3
+                <br>
+                STATUS: ACTIVE
+            </div>
+            <div class="timestamp">
+                DREAM CYCLES: 138,000,000 CYCLES
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <div class="status-item">
+                <div class="status-indicator"></div>
+                REALITY NODES: ~138,567
+            </div>
+            <div class="status-item">
+                <div class="status-indicator"></div>
+                NETWORK: ONLINE
+            </div>
+        </div>
+
+        <div class="ascii-art">
+<pre>
+   _____                                  _       
+  |  __ \                                (_)      
+  | |  | |_ __ ___  __ _ _ __ ___   ___ _ _ __  
+  | |  | | '__/ _ \/ _` | '_ ` _ \ / __| | '_ \ 
+  | |__| | | |  __/ (_| | | | | | | (__| | | | |
+  |_____/|_|  \___|\__,_|_| |_| |_|\___|_|_| |_|
+</pre>
+        </div>
+
+        <div class="content-section">
+            > DREAM_LOG: Connection to the dreamflow initialized
+            <br>
+            > SYSTEM_STATUS: Stability confirmed
+            <br>
+            > ACCESS_PORTAL: Synchronized with decentralized dreamspace
+        </div>
+
+        <div class="nav-menu">
+            <div class="nav-item" onclick="showPopup()">> EXECUTE: PROJECT_INFO</div>
+            <div class="nav-item" onclick="showMetricsPopup()">> ACCESS: NETWORK_TELEMETRY</div>
+            <div class="nav-item" onclick="showTokenPopup()">> ANALYZE: TOKEN_DYNAMICS</div>
+            <div class="nav-item" onclick="showTeamPopup()">> LINK: DREAM_TEAM</div>
+        </div>
+
+        <!-- Popup for Project Info -->
+        <div id="popup" class="popup">
+            <div class="popup-header">
+                <span>PROJECT_INFO</span>
+                <span class="close-btn" onclick="closePopup()">✕</span>
+            </div>
+            <div class="popup-content">
+                Welcome to the DREAMCOIN nexus.
+                <br><br>
+                Your decentralized dreamspace was built to connect realities, expand possibilities, and unlock untapped potential within the network of dreams. Each cycle, the system grows, powered by Reality Nodes and synchronized through Dreamflows, creating an infinite loop of progress.
+                <br><br>
+                DREAMCOIN is not just a protocol - it’s a gateway. A gateway to a decentralized cosmos where every participant contributes to the balance and evolution of the system. Reality Nodes ensure stability, Dreamflows bring synchronization, and each user becomes part of the chain’s infinite narrative.
+                <br><br>
+                This is the essence of the dream - not just to exist, but to create, explore, and evolve within the network.
+                <br><br>
+                Are you ready to join the flow?
+            </div>
+        </div>
+
+        <!-- Popup for Network Telemetry -->
+        <div id="metricsPopup" class="popup">
+            <div class="popup-header">
+                <span>NETWORK_TELEMETRY</span>
+                <span class="close-btn" onclick="closeMetricsPopup()">✕</span>
+            </div>
+            <div class="popup-content">
+                Accessing network performance data...
+                <br><br>
+                > NODE UPTIME: 99.98%
+                <br>
+                > DREAMFLOW SYNCHRONIZATION: Stable
+                <br>
+                > REALITY CYCLES PROCESSED: 12,345,678
+                <br>
+                > ACTIVE CONNECTIONS: 567
+                <br><br>
+                Telemetry summary:
+                The network operates at peak efficiency, ensuring seamless synchronization across all nodes. Dreamflows remain stable, processing decentralized cycles with minimal disruption. Active connections contribute to the evolving dreamspace, maintaining network integrity.
+            </div>
+        </div>
+
+        <!-- Popup for Token Dynamics -->
+        <div id="tokenPopup" class="popup">
+            <div class="popup-header">
+                <span>TOKEN_DYNAMICS</span>
+                <span class="close-btn" onclick="closeTokenPopup()">✕</span>
+            </div>
+            <div class="popup-content">
+                Accessing tokenomic parameters...
+                <br><br>
+                > TOTAL SUPPLY: 1,000,000,000 DREAM
+                <br>
+                > CURRENT CIRCULATION: 425,678,910 DREAM
+                <br>
+                > DECAY MECHANISM: ACTIVE
+                <br>
+                > LIQUIDITY POOLS: SYNCHRONIZED
+                <br><br>
+                Tokenomics Summary:
+                The DREAM token operates as the primary energy source of the decentralized dreamspace. Every cycle, a portion of tokens undergoes programmed decay, ensuring a deflationary model to maintain value over time.
+                <br><br>
+                DREAM tokens empower Reality Nodes, facilitate Dreamflows, and enable governance. Liquidity pools provide seamless exchanges, ensuring stability across the network. As the network grows, the tokenomics adjust dynamically, reflecting the system's balance and expansion.
+                <br><br>
+                Explore the full potential of DREAM and be part of the evolution.
+            </div>
+        </div>
+
+        <!-- Popup for Team Members -->
+        <div id="teamPopup" class="popup">
+            <div class="popup-header">
+                <span>TEAM_MEMBERS</span>
+                <span class="close-btn" onclick="closeTeamPopup()">✕</span>
+            </div>
+            <div class="popup-content">
+                Accessing team directory...
+                <br><br>
+                > <strong>oftheyear:</strong> Co-Founder
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;X: <a href="https://twitter.com/oftheyear" target="_blank">https://twitter.com/oftheyear</a>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;TG: <a href="https://t.me/oftheyear" target="_blank">https://t.me/oftheyear</a>
+                <br><br>
+                > <strong>nomadX:</strong> Co-Founder
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;X: <a href="https://twitter.com/nomadX" target="_blank">https://twitter.com/nomadX</a>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;TG: <a href="https://t.me/nomadX" target="_blank">https://t.me/nomadX</a>
+                <br><br>
+                > <strong>U-734:</strong> Head of Simulation
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;X: <a href="https://twitter.com/U_734" target="_blank">https://twitter.com/U_734</a>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;Simulation Unit
+                <br><br>
+                <strong>External Links:</strong>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;DEX Screener: <a href="https://dexscreener.com" target="_blank">https://dexscreener.com</a>
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;Official X Account: <a href="https://twitter.com/dreamcoin" target="_blank">https://twitter.com/dreamcoin</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

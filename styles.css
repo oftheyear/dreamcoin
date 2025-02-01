@@ -1,0 +1,184 @@
+:root {
+    --bg-color: #121212; /* Dark background color */
+    --terminal-bg: #1c0d6a; /* Darker blue for the terminal */
+    --text-color: #ffffff; /* Bright white for text */
+    --accent: #3d7aa1; /* Complementary accent color */
+    --border-radius: 6px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', monospace;
+}
+
+body {
+    background: var(--bg-color);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#matrixCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Ensure it sits behind the terminal */
+}
+
+.terminal {
+    width: 90%;
+    max-width: 1000px; /* Ensure enough width for ASCII art */
+    background: var(--terminal-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 
+        3px 3px 8px rgba(0, 0, 0, 0.2), /* Outer shadow for slight depth */
+        inset -2px -2px 4px rgba(255, 255, 255, 0.1), /* Light reflection from top-left */
+        inset 2px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle depth on bottom-right */
+    padding: 20px;
+    position: relative;
+    z-index: 1; /* Above the background */
+}
+
+.terminal-header {
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color); /* White text */
+}
+
+.server-info {
+    font-size: 0.9em;
+    color: var(--text-color); /* White text */
+}
+
+.timestamp {
+    font-size: 0.9em;
+    color: var(--text-color); /* White text */
+}
+
+.status-bar {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.status-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9em;
+    color: var(--text-color); /* White text */
+}
+
+.status-indicator {
+    width: 10px;
+    height: 10px;
+    background: #4CAF50;
+    border-radius: 50%;
+}
+
+.content-section {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid var(--accent);
+    border-radius: var(--border-radius);
+    color: var(--text-color); /* White text */
+}
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.nav-item {
+    padding: 15px;
+    border: 1px solid var(--accent);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    color: var(--text-color); /* White text */
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background: var(--accent);
+    color: var(--terminal-bg); /* Match terminal background on hover */
+}
+
+.terminal-input {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255,255,255,0.2); /* Slight transparency */
+    border: 1px solid var(--accent);
+    border-radius: var(--border-radius);
+    font-family: inherit;
+    margin-top: 20px;
+    color: var(--text-color); /* White text */
+}
+
+.ascii-art {
+    font-family: monospace; /* Fixed-width font for ASCII art */
+    white-space: pre; /* Preserve whitespace */
+    font-size: 12px; /* Ensure it fits */
+    color: var(--text-color); /* Match terminal text */
+    text-align: left;
+    margin: 20px 0;
+    line-height: 1.2; /* Maintain spacing */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    background: var(--terminal-bg);
+    border: 2px solid var(--accent);
+    border-radius: var(--border-radius);
+    z-index: 100;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: var(--text-color);
+}
+
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: var(--accent);
+    color: var(--terminal-bg);
+    font-weight: bold;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.popup-content {
+    padding: 15px;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        grid-template-columns: 1fr;
+    }
+}
