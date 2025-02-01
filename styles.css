@@ -171,11 +171,42 @@ body {
     font-size: 1.2em;
 }
 
+/* Fix for Link Colors in Popups */
+.popup-content a {
+    color: inherit; /* Makes links the same color as the surrounding text */
+    text-decoration: none; /* Removes underline */
+}
+
+.popup-content a:hover {
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
 .popup-content {
     padding: 15px;
     font-size: 0.9em;
     line-height: 1.5;
 }
+
+/* External Links Styling */
+.external-links {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid var(--accent);
+}
+
+.external-links a {
+    color: var(--text-color);  /* Now White */
+    text-decoration: none;
+    font-size: 0.9em;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.external-links a:hover {
+    color: var(--accent);
+}
+
 
 @media (max-width: 768px) {
     .nav-menu {
