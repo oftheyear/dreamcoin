@@ -52,13 +52,14 @@ body {
 }
 
 .terminal-header {
+    display: flex;
+    flex-wrap: wrap; /* Allows text to move to a new line on smaller screens */
+    justify-content: space-between;
+    align-items: center;
     border-bottom: 2px solid var(--accent);
     padding-bottom: 10px;
     margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--text-color); /* White text */
+    color: var(--text-color);
 }
 
 .server-info {
@@ -69,6 +70,8 @@ body {
 .timestamp {
     font-size: 0.9em;
     color: var(--text-color); /* White text */
+    white-space: nowrap;
+    text-align: right;
 }
 
 .status-bar {
@@ -217,8 +220,18 @@ body {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     .nav-menu {
         grid-template-columns: 1fr;
+    }
+
+    .terminal-header {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align text to the left */
+    }
+
+    .timestamp {
+        text-align: left; /* Align to left instead of right */
+        margin-top: 5px; /* Adds space between elements */
     }
 }
