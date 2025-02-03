@@ -21,8 +21,10 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden; /* Prevents side scroll */
+    overflow-y: auto;   /* Allows vertical scrolling */
 }
+
 
 #matrixCanvas {
     position: fixed;
@@ -45,6 +47,8 @@ body {
     padding: 20px;
     position: relative;
     z-index: 1; /* Above the background */
+    max-height: 90vh;  /* Prevents terminal from being too tall */
+    overflow-y: auto;  /* Enables scrolling inside the terminal */
 }
 
 .terminal-header {
