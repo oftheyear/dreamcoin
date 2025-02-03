@@ -149,10 +149,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
+    width: 80%;
     max-width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
     background: var(--terminal-bg);
     border: 2px solid var(--accent);
     border-radius: var(--border-radius);
@@ -162,14 +160,17 @@ body {
 }
 
 .popup-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
+    position: sticky;
+    top: 0;
     background: var(--accent);
     color: var(--terminal-bg);
     font-weight: bold;
+    padding: 10px 15px;
     border-radius: var(--border-radius) var(--border-radius) 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 101;
 }
 
 .close-btn {
@@ -188,6 +189,8 @@ body {
 }
 
 .popup-content {
+    max-height: 60vh; /* Ensures content is scrollable */
+    overflow-y: auto; /* Allows scrolling inside the content only */
     padding: 15px;
     font-size: 0.9em;
     line-height: 1.5;
