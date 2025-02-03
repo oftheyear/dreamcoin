@@ -37,18 +37,18 @@ body {
 
 .terminal {
     width: 90%;
-    max-width: 1000px; /* Ensure enough width for ASCII art */
+    max-width: 1000px;
     background: var(--terminal-bg);
     border-radius: var(--border-radius);
     box-shadow: 
-        3px 3px 8px rgba(0, 0, 0, 0.2), /* Outer shadow for slight depth */
-        inset -2px -2px 4px rgba(255, 255, 255, 0.1), /* Light reflection from top-left */
-        inset 2px 2px 6px rgba(0, 0, 0, 0.2); /* Subtle depth on bottom-right */
+        3px 3px 8px rgba(0, 0, 0, 0.2),
+        inset -2px -2px 4px rgba(255, 255, 255, 0.1),
+        inset 2px 2px 6px rgba(0, 0, 0, 0.2);
     padding: 20px;
     position: relative;
-    z-index: 1; /* Above the background */
-    max-height: 90vh;  /* Prevents terminal from being too tall */
-    overflow-y: auto;  /* Enables scrolling inside the terminal */
+    z-index: 1;
+    overflow: visible; /* Ensures no internal scrolling */
+    max-height: unset; /* Removes any forced height that might cause scrolling */
 }
 
 .terminal-header {
@@ -149,8 +149,10 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 90%;
     max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
     background: var(--terminal-bg);
     border: 2px solid var(--accent);
     border-radius: var(--border-radius);
